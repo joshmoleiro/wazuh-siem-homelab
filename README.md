@@ -50,6 +50,16 @@ File integrity monitoring is a security technique that is tasked with the respon
 ## Security Configuration Assessment (SCA) 
 SCA is a module in Wazuh which runs automated checks against your system in order to see how it aligns with hardening guidelines and best practices. It does this by comparing your system configuration against a benchmark and each check that is done either passes, fails, or isn't applicable. Benchmarks are rules set by security organizations like the CIS which publishes detailed security hardening guidelines for different operating systems. In my lab, the one that ran against my Mac agent was the CIS Apple macOS benchmark. The results from my SCA showed a 0 percent score with 10 failed and 13 non applicable out of 23 total checks. The 0 percent was a result of none of the checks that were applicable passing. The not applicable checks that came up were ones that didn't apply to my specific system configurations. In real life, each check that is done would tell me exactly what's misconfigured and how I can go about fixing it. I would prioritize fixing the checks that came up as failed and then fix them in order to improve the score. A failed SCA would potentially mean that my system has a misconfiguration detected that could potentially lead to an attack. An example of this could be like if file sharing permissions were allowed when they shouldn't have been which is a potential open door straight to a network. Every failed check that happens is a gap in the security posture which is something an attacker could potentially exploit. 
 
-I deployed a fully functional SIEM system on a cloud server and connected a real endpoint to it which I used to monitor, detect and analyze security events. I was also able to learn how a SIEM takes in data from the agents, how alerts are generated/categorized, and security events map the attack techniques to the MITRE Att&ck framework. 
+I deployed a fully functional SIEM system on a cloud server and connected a real endpoint to it which I used to monitor, detect and analyze security events. I was also able to learn how a SIEM takes in data from the agents, how alerts are generated/categorized, and security events map the attack techniques to the MITRE Att&ck framework as well as how the compliance frameworks such as PCI DSS use automated checks to measure the security posture. I also was able to learn about the limitations of certain operating systems, in my case macOS in relation to how the are able to be used with the security tools an example being how the FIM capabilities interact with the macOS. 
+**Skills Demonstrated**
+- SIEM deployment and configuration
+- Endpoint agent enrollment
+- Alert analysis: reading alerts, understanding rule levels, and differentiating between what alerts are suspicious versus which ones are normal
+- MITRE Att&ck framework knowledge: Being able to map the events to attack techniques
+- File Integrity Monitoring: Learning how to understand checksums, baselines, and how changes within activity or files effect these.
+- Security configuration assessment: Being able to understand what the compliance benchmarks are and what failed checks mean
+- Cloud infrastructure: Being able to deploy and manage a Linux platform on a cloud platform
+- SSH and comand line proficiency as well as troubleshooting
+If I were to expand upon this home lab and continue it the next step I would take would be to add more agents with the goal of getting an even more diverse set of data. 
 
 
