@@ -1,4 +1,4 @@
-# wazuh-siem-homelab
+# Wazuh-SIEM-Homelab
 
 ## Project Overview
 This project documents the deployment/configuration of a Wazuh SIEM system in a home lab environment. The goal of this project was to gain hands on experience with security monitoring tools that would be used in real life SOC environments including the alert triage, file integrity monitoring, MITRE Attack framework mapping, threat hunting, and compliance assessment. 
