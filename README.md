@@ -64,5 +64,3 @@ I deployed a fully functional SIEM system on a cloud server and connected a real
 - SSH and command line proficiency as well as troubleshooting
 **Next Steps**
 If I were to expand upon this home lab and continue it the next step I would take would be to add more agents like a Windows VM with the goal of getting an even more diverse set of data. I would also explore adding things like custom detection rules in order to simulate more specific attack scenarios. I would also enable the vulnerability detection module to scan endpoints for known CVEs. Automating Wazuh to be able to block certain IPs as well when certain alert types fire could also be something I would explore. This project overall gave me great hands on experience with simulating a real workflow in a SOC environment.
-
-
