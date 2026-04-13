@@ -59,8 +59,8 @@ FIM in Wazuh is handled by the syscheck module which comes preconfigured includi
 
 ## Security Configuration Assessment (SCA) 
 In my lab, the one that ran against my Mac agent was the CIS Apple macOS benchmark. The results from my SCA showed a 0 percent score with 10 failed and 13 non applicable out of 23 total checks. The 0 percent was a result of none of the checks that were applicable passing. The not applicable checks that came up were ones that didn't apply to my specific system configurations. In real life, each check that is done would tell me exactly what's misconfigured and how I can go about fixing it. I would prioritize fixing the checks that came up as failed and then fix them in order to improve the score. A failed SCA would potentially mean that my system has a misconfiguration detected that could potentially lead to an attack. An example of this could be like if file sharing permissions were allowed when they shouldn't have been which is a potential open door straight to a network. Every failed check that happens is a gap in the security posture which is something an attacker could potentially exploit. 
-![SCA](sca.png)
-![SCA Events](sca-events.png)
+![SCA](SCA.png)
+![SCA Events](SCA-events.png)
 
 ## Conclusion
 I deployed a fully functional SIEM system on a cloud server and connected a real endpoint to it which I used to monitor, detect and analyze security events. I was also able to learn how a SIEM takes in data from the agents, how alerts are generated/categorized, and security events map the attack techniques to the MITRE ATT&CK framework as well as how the compliance frameworks such as PCI DSS use automated checks to measure the security posture. I also was able to learn about the limitations of certain operating systems, in my case macOS in relation to how they are able to be used with the security tools an example being how the FIM capabilities interact with macOS.
