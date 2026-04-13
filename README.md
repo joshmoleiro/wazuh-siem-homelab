@@ -2,7 +2,7 @@
 
 ## Project Overview
 This project documents the deployment/configuration of a Wazuh SIEM system in a home lab environment. I chose Wazuh for this because it was a commonly used platform in many SOC environments and it also supports many different operating systems. The goal of this project was to gain hands on experience with security monitoring tools that would be used in real life SOC environments including the alert triage, file integrity monitoring, MITRE ATT&CK framework mapping, threat hunting, and compliance assessment. 
-![Overview](images/overview.png)
+![Overview](overview.png)
 
 ## Environment
 - **SIEM Server**: VULTR Cloud VPS - Ubuntu 22.04 LTS x86_64, 4GB RAM, 2 vCPUs
