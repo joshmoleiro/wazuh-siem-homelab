@@ -34,7 +34,7 @@ The Wazuh agent was installed on the MacBook endpoint and then enrolled to the s
 
 ### Alert Summary
 In total there was 2,637 alerts that were generated and visible on the threat hunting dashboard within a 24 hour time period. These results showed that there were 0 level 12 or above alerts, 0 authentication failures, and a total of 8 authentication successes that came up from these scans. From a security perspective these results show that nobody attempted to make any sort of attacks to gain access to the system within that 24 hour time period as the alerts shown were all shown to be moderate to low level severity. This reveals a pretty healthy baseline security posture overall for a monitored endpoint since there were no attack patterns such as data exfiltration, lateral movement, or privilege escalation that happened either. If I were to see a spike in critical alerts during this time period then I would know that I should trigger an investigation into it. Upon the investigation I would be looking for details such as what time the alert(s) was triggered at and which agent triggered it.
-![Threat Hunting](threat-hunting.png)
+![Threat Hunting](threat-hunting-2.png)
 ![Threat Hunting Dashboard](threat-hunting-db.png)
 ![Threat Hunting Events](threat-hunting-events.png)
 
