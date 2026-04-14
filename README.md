@@ -6,7 +6,7 @@ This project documents the deployment/configuration of a Wazuh SIEM system in a 
 
 ## Environment
 - **SIEM Server**: VULTR Cloud VPS - Ubuntu 22.04 LTS x86_64, 4GB RAM, 2 vCPUs
-- **Monitored Endpoint**: Apple Macbook Air M4 (macOS Sequoia) - Wazuh Agent 4.9.2
+- **Monitored Endpoint**: Apple Macbook Air M4 (macOS 26.4) - Wazuh Agent 4.9.2
 - **Wazuh Version**: 4.9.2 (all in one installation)
 - **Components**: Wazuh Manager, Wazuh Indexer, Wazuh Dashboard, Filebeat
 
@@ -39,7 +39,7 @@ In total there was 2,637 alerts that were generated and visible on the threat hu
 ![Threat Hunting Events](threat-hunting-events.png)
 
 ### Most Common Alert: Integrity Checksum Changed (Rule 550)
-A checksum is a value assigned to a file based on a calculation made on the contents within it. Like a hash, if anything within it is changed then the value is changed which then triggers an alert. In Wazuh upon the installation the agent performs an initial baseline scan which then calculates the checksum of all the files and then proceeds to store said files within a database. With each scan that comes after it then checks the checksum of all those files again and compares them to their baselines, then if any of them result in any changes it fires off an alert. This alert specifically fired off so many times in my lab due to the fact that I am running it off of a macbook with MacOS Sequoia which makes constant small tweaks to system files. Every time Wazuh ran system scans it picked up on these changes and gave alerts on them (rule 550). In a real world environment I would need to be able to decipher actual suspicious changes such as a file having its actual contents modified versus ones that are completely normal such as slight value changes in files occurring after a system update.
+A checksum is a value assigned to a file based on a calculation made on the contents within it. Like a hash, if anything within it is changed then the value is changed which then triggers an alert. In Wazuh upon the installation the agent performs an initial baseline scan which then calculates the checksum of all the files and then proceeds to store said files within a database. With each scan that comes after it then checks the checksum of all those files again and compares them to their baselines, then if any of them result in any changes it fires off an alert. This alert specifically fired off so many times in my lab due to the fact that I am running it off of a macbook with MacOS Tahoe which makes constant small tweaks to system files. Every time Wazuh ran system scans it picked up on these changes and gave alerts on them (rule 550). In a real world environment I would need to be able to decipher actual suspicious changes such as a file having its actual contents modified versus ones that are completely normal such as slight value changes in files occurring after a system update.
 
 ### MITRE ATT&CK Mapping
 "Stored Data Manipulation T1565.001" is when an attacker has changed data that has been stored within the system with the intention of covering their tracks, changing how a system normally operates, or to attack something directly. In my lab this is shown with the integrity checksum change alerts. It was mapped to the MITRE attack section because the detection itself doesn't differentiate from Apple just changing the system file itself versus it being modified by an attacker and MITRE mapping itself doesn't actually take into account the intent of the change.
@@ -74,5 +74,6 @@ I deployed a fully functional SIEM system on a cloud server and connected a real
 - Security configuration assessment: Being able to understand what the compliance benchmarks are and what failed checks mean
 - Cloud infrastructure: Being able to deploy and manage a Linux platform on a cloud platform
 - SSH and command line proficiency as well as troubleshooting
-**Next Steps**
+
+## Next Steps
 If I were to expand upon this home lab and continue it the next step I would take would be to add more agents like a Windows VM with the goal of getting an even more diverse set of data. I would also explore adding things like custom detection rules in order to simulate more specific attack scenarios. I would also enable the vulnerability detection module to scan endpoints for known CVEs. Automating Wazuh to be able to block certain IPs as well when certain alert types fire could also be something I would explore. This project overall gave me great hands on experience with simulating a real workflow in a SOC environment.
