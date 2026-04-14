@@ -17,6 +17,7 @@ The lab uses a standard Wazuh single-node deployment:
 - **Wazuh Dashboard** — visualizes the alert data, MITRE ATT&CK mappings, compliance status, and FIM results
 - **Filebeat** — sends alert data from the Manager to the Indexer
 - **Mac Agent (001)** — installed on the MacBook endpoint, monitors system activity and sends events to the Manager
+
 The Wazuh server runs on a cloud VPS accessible with SSH. The Mac agent communicates with the manager over port 1514 (TCP).
 ![Agent](agent.png)
 ![Agent Details](agent-details.png)
